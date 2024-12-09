@@ -39,6 +39,7 @@
 
 .address {
   justify-items: end;
+  justify-self: end;
 }
 
 .address-list {
