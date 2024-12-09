@@ -1,9 +1,14 @@
+.main {
+  scroll-behavior: smooth;
+  /* обратите внимание что scroll-behavior не работает правда не 
+  понимаю почему я знаю синтаксис и применил его к блоку в котором и находиться lots но он почему то не работает */
+}
+
 .header {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
-  height: 293px;
-  padding: 92px 50px 96px;
+  padding: 92px 50px 92px;
   font-size: 18px;
 }
 
@@ -53,10 +58,7 @@
   position: relative;
   padding: 163px 50px 51px;
   color: #FFFFFF;
-  background-image: url(../images/cover.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: url(../images/cover.jpg) no-repeat center / cover;
 }
 
 .cover__title {
@@ -65,6 +67,7 @@
   margin-bottom: 130px;
   font-size: 100px;
   letter-spacing: 0.3em;
+  text-transform: uppercase;
 }
 
 .aligned-text {
@@ -102,8 +105,7 @@
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
@@ -133,6 +135,7 @@
 
 .section__lots {
   padding: 179px 24px 0;
+  scroll-behavior: smooth;
 }
 
 .lots__title {
@@ -167,14 +170,15 @@
 .card-title {
   position: relative;
   z-index: 1;
+  display: inline;
   font-weight: bold;
   font-size: 22px;
   line-height: 1.2;
+  text-decoration: underline;
   text-transform: uppercase;
-}
-
-.card-title span {
-  border-bottom: 1px solid #FFFFFF;
+  /* border-bottom: 1px solid white; border не работает ибо заголовок почему то распознаеться блоком
+  до этого я внутри заголовка обернул текст в спан что б подчеркнуть его четко как на макете ибо text-decoration
+  не работает совсем так как хотелось бы ибо на макете видно что реализован бордер*/
 }
 
 .card p {
@@ -183,15 +187,15 @@
   font-size: 20px;
 }
 
-.card_first {
+.card_type_film {
   background-image: url(../images/card-lot-01.jpg);
 }
 
-.card_second {
+.card_type_book {
   background-image: url(../images/card-lot-02.jpg);
 }
 
-.card_third {
+.card_type_painting {
   background-image: url(../images/card-lot-03.jpg);
 }
 
@@ -203,14 +207,11 @@
   text-decoration: none;
 }
 
-.about {
-  padding: 181px 24px 0;
-}
-
 .about__logo {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 25px;
+  padding: 181px 24px 0;
 }
 
 .logo-white {
@@ -223,18 +224,21 @@
 }
 
 .about__info {
+  display: flex;
+  flex-direction: column;
   grid-column: 2/4;
+  gap: 24px;
 }
 
 .about__title {
+  margin-bottom: 76px;
   padding: 101px 0 0 0;
   font-weight: bold;
   font-size: 40px;
   text-transform: uppercase;
 }
 
-.about-paragraph {
-  padding: 100px 0 0 0;
+.about__info p {
   font-size: 20px;
   line-height: 24px;
 }
@@ -258,9 +262,7 @@
 .favicon__list {
   display: flex;
   flex-direction: row;
+  gap: 48px;
   padding: 0 0 30px 94px;
   list-style: none;
-  gap: 48px;
 }
-
-/* добавил текст для комита */
