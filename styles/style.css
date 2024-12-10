@@ -1,9 +1,3 @@
-.main {
-  scroll-behavior: smooth;
-  /* обратите внимание что scroll-behavior не работает правда не 
-  понимаю почему я знаю синтаксис и применил его к блоку в котором и находиться lots но он почему то не работает */
-}
-
 .header {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
@@ -177,9 +171,6 @@
   line-height: 1.2;
   text-decoration: underline;
   text-transform: uppercase;
-  /* border-bottom: 1px solid white; border не работает ибо заголовок почему то распознаеться блоком
-  до этого я внутри заголовка обернул текст в спан что б подчеркнуть его четко как на макете ибо text-decoration
-  не работает совсем так как хотелось бы ибо на макете видно что реализован бордер*/
 }
 
 .card p {
